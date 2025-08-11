@@ -9,7 +9,6 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import dash_auth
 import os
-from dotenv import load_dotenv
 
 # Define the username and password pairs
 VALID_USERNAME_PASSWORD_PAIRS = {
