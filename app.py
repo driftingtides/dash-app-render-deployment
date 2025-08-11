@@ -7,6 +7,12 @@ import plotly.express as px
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
+import dash_auth
+
+# Define the username and password pairs
+VALID_USERNAME_PASSWORD_PAIRS = {
+    'tt1': 'badonky'
+}
 
  # Load dataset
 data = pd.read_csv('data/winequality-red.csv')
@@ -37,6 +43,10 @@ logreg_model.fit(X_train, y_train)
 
 # Create the Dash app
 app = dash.Dash(__name__)
+auth = dash_auth.BasicAuth(
+    app,
+    VALID_USERNAME_PASSWORD_PAIRS
+)
 server = app.server
 
 # Define the layout of the dashboard
