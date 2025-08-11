@@ -10,11 +10,10 @@ from dash.dependencies import Input, Output, State
 import dash_auth
 import os
 
+from dotenv import dotenv_values
+
 # Define the username and password pairs
-VALID_USERNAME_PASSWORD_PAIRS = {
-    'tt1': 'badonky',
-    'tss': 'reutling',
-}
+VALID_USERNAME_PASSWORD_PAIRS = dotenv_values(".env") 
 
  # Load dataset
 data = pd.read_csv('data/winequality-red.csv')
