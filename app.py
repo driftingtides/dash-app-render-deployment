@@ -17,12 +17,6 @@ VALID_USERNAME_PASSWORD_PAIRS = {
     'tss': 'reutling',
 }
 
-load_dotenv()
-
-VALID_USERNAME_PASSWORD_PAIRS = {
-    os.getenv('DASH_USERNAME'): os.getenv('DASH_PASSWORD')
-}
-
  # Load dataset
 data = pd.read_csv('data/winequality-red.csv')
 # Check for missing values
