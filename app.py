@@ -8,10 +8,19 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import dash_auth
+import os
+from dotenv import load_dotenv
 
 # Define the username and password pairs
 VALID_USERNAME_PASSWORD_PAIRS = {
-    'tt1': 'badonky'
+    'tt1': 'badonky',
+    'tss': 'reutling',
+}
+
+load_dotenv()
+
+VALID_USERNAME_PASSWORD_PAIRS = {
+    os.getenv('DASH_USERNAME'): os.getenv('DASH_PASSWORD')
 }
 
  # Load dataset
